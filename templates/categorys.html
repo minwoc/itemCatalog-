@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<body class = "body">
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='222222.css') }}">
+  <header class = "header">
+    <div class = "catalog">
+      <h1> Catalog App  </h1> <span> {% include "header.html" %} </span>
+    </div>
+  </header>
+  <div class = "title">
+    <h2> Item's Catalog </h2>
+  </div>
+
+  <section class="mainBody">
+    <div class = "categoryContainer">
+      <h3> Catagory </h3>
+      {% for cat in categoryo %}
+      <a href = "{{url_for('showItem', category_name = cat.name)}}"> <p>{{cat.name}}</p></a>
+      <a href = "{{url_for('addSpecificItem', category_name = cat.name)}}"> </p></a>
+      {% endfor %}
+    </div>
+    <div class = "itemContainer">
+      <h3> Latest Added Items in Crescending Order </h3>
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <ul>
+        {% for message in messages %}
+        <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% endwith %}
+      {% for it in itemyo %}
+      <ol> {{it.name}} {{categoryo.name}} </ol>
+      {{this}}
+      {% endfor %}
+    </div>
+  </section>
+
+</body>
+</html>

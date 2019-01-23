@@ -1,0 +1,36 @@
+<html>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='222222.css') }}">
+
+<body class = "body">
+	<header class = "header">
+		<div class = "catalog">
+			<h1> Catalog App </h1>
+		</div>
+	</header>
+
+<div class ="title">
+<h1> Edit {{editItemYo.name}} </h1>
+</div>
+
+
+	<section class="mainBody">
+<form action="{{ url_for('editSpecificItem',item_name = editItemYo.name)}}" method = 'post'>
+
+	<div class = "name">
+	<p>Name:</p>
+		<input type ='text' size='40' name='name' required>
+	</div>
+	<div class = "description">
+  <p>description:</p>
+  	<input type ='text' size='100' name='description' required>
+	</div>
+<input type='submit' value='Edit'>
+
+
+<a href = '{{url_for('showCategorys')}}'> Cancel </a>
+
+</form>
+</section>
+</body>
+
+</html>

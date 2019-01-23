@@ -1,0 +1,36 @@
+<html>
+<body class = "body">
+
+
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='222222.css') }}">
+<header class = "header">
+  <div class = "catalog">
+    <h1> Catalog App </h1>
+  </div>
+</header>
+<div class = "title">
+  <h1> {{si.name}}</h1>
+</div>
+<section class="mainBody">
+  <!-- <a href = ""> <p>{{sc.name}}</p></a> -->
+<div class = "specDescription">
+  <p> <b> Catalog's Item's Descriptions</b>: </br> {{si.description}}</p>
+</div>
+{% if 'username' in session or creator.id == session['user_id'] %}
+  <div class = "editDelete">
+    <div class = "edit">
+      <p><a href = "{{url_for('editSpecificItem',item_name = si.name)}}">Edit Item</a></p>
+    </div>
+    <div class = "delete">
+      <p> <a href = "{{url_for('deleteSpecificItem',item_name = si.name)}}">Delete Item</a> </p>
+    </div>
+  </div>
+{% endif %}
+</section>
+
+
+
+
+
+</body>
+</html>

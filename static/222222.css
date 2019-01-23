@@ -1,0 +1,57 @@
+.body{
+  background-color: rgb(255, 230, 204);
+}
+
+.header{
+  height: 5%;
+  background-color: rgb(255, 0, 128);
+  margin-bottom: 20px;
+}
+
+.title{
+  text-align: center;
+  border: solid black;
+  background-color: rgb(255, 128, 128);
+}
+
+.mainBody{
+  align: center;
+  display: flex;
+  height: 50%;
+  background-color: rgb(204, 153, 102);
+}
+
+.itemContainer{
+  border: solid black;
+  width: 90%;
+}
+
+.categoryContainer{
+  border: solid black;
+  width: 50%;
+}
+
+.editDelete {
+  display: flex;
+  border: solid red;
+}
+
+p {
+ font-family: "Courier New", Roboto, Helvetica, Arial, monospace;
+ font-size: 20px;
+ color: black;
+ line-height: 24px;
+ font-weight: 400;
+}
+
+@media screen and (min-width: 700px) {
+  .body {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.name, .description, .categoryInput{
+  align: center;
+  border: solid black;
+}

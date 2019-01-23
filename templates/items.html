@@ -1,0 +1,38 @@
+<html>
+<body class = "body">
+
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='222222.css') }}">
+<header class = "header">
+  <div class = "catalog">
+    <h1> Catalog App  </h1> <span> {% include "header.html" %} </span>
+  </div>
+</header>
+<div class = "title">
+  <h2> Item's Catalog </h2>
+</div>
+<section class="mainBody">
+<div class = "categoryContainer">
+  <h3> Types of Catagory </h3>
+  {% for a in alls %}
+  <p>{{a.name}}</p>
+  {% endfor %}
+</div>
+<div class = "itemContainer">
+  <h3> {{cats.name}} Items </h3>
+
+  <a href="{{url_for('addSpecificItem')}}" > <h3> Create a New Item </h3> </a>
+
+  {% for i in its %}
+
+
+
+  <a href = "{{url_for('showSpecificItem', category_name=cats.name, item_name = i.name)}}"> <p>{{i.name}}</p></a>
+  <!-- cats is a specific category.. -->
+  <!-- passing grabbed specific category's item with (its=itenig) from showItem function, so
+  you can use that item in showSpecific function... -->
+
+  {% endfor %}
+</div>
+</section>
+</body>
+</html>

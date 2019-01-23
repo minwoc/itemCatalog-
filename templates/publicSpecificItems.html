@@ -1,0 +1,48 @@
+<html>
+<body class = "body">
+
+  <div class="row banner menu">
+		<div class="col-md-11 col-md-offset-1 padding-none">
+
+			<figure class="creator">
+				<img src="{{ creator.picture}}">
+				<figcaption>{{ creator.name }}'s project</figcaption>
+        <figcaption>My email is {{ creator.email }}</figcaption>
+
+			</figure>
+
+
+		</div>
+	</div>
+
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='222222.css') }}">
+<header class = "header">
+  <div class = "catalog">
+    <h1> Catalog App </h1>
+    <span> {% include "header.html" %} </span>
+  </div>
+</header>
+<div class = "title">
+  <h1> {{si.name}}</h1>
+</div>
+<section class="mainBody">
+  <!-- <a href = ""> <p>{{sc.name}}</p></a> -->
+<div class = "specDescription">
+  <p> <b> Catalog's Item's Descriptions</b>: </br> {{si.description}}</p>
+</div>
+ <!--  <div class = "editDelete">
+    <div class = "edit">
+      <p><a href = "{{url_for('editSpecificItem',item_name = si.name)}}">Edit Item</a></p>
+    </div>
+    <div class = "delete">
+      <p> <a href = "{{url_for('deleteSpecificItem',item_name = si.name)}}">Delete Item</a> </p>
+    </div>
+  </div> -->
+</section>
+
+
+
+
+
+</body>
+</html>
